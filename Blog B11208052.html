@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotoGP: 時速 360km 的極速派對</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+TC:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        race: {
+                            red: '#E10600',
+                            dark: '#0B0B0B',
+                            gray: '#1A1A1A',
+                            accent: '#F59E0B',
+                            silver: '#E5E7EB'
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'Noto Sans TC', 'sans-serif'],
+                        body: ['Noto Sans TC', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0B0B0B;
+            color: #E5E7EB;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .text-gradient {
+            background: linear-gradient(90deg, #E10600, #F59E0B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .race-border {
+            position: relative;
+        }
+        .race-border::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: #E10600;
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-race-red selection:text-white">
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex flex-col items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0 scale-105 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-t from-race-dark via-transparent to-race-dark/50 z-10"></div>
+            <div class="w-full h-full object-cover">
+                <img src='https://opal.google/board/blobs/437cad54-7e20-4d93-b2a1-e6859ff83c38' alt='MotoGP Banner' class="w-full h-full object-cover opacity-80 brightness-75 scale-110 motion-safe:animate-[pulse_8s_ease-in-out_infinite]" />
+            </div>
+        </div>
+
+        <div class="relative z-20 text-center px-6 max-w-5xl">
+            <div class="inline-block px-4 py-1 mb-6 border border-race-red/50 bg-race-red/10 text-race-red font-display tracking-widest text-sm uppercase rounded-full animate-bounce">
+                B11208052 | Special Report
+            </div>
+            <h1 class="text-5xl md:text-8xl font-display font-extrabold mb-6 leading-tight tracking-tighter italic">
+                翅膀越多跑越快？<br/>
+                <span class="text-gradient">MotoGP 都在爭什麼？</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 font-light max-w-3xl mx-auto leading-relaxed">
+                帶你看懂這場時速 <span class="text-race-red font-bold">360km</span> 的機車極致派對
+            </p>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20">
+            <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
+                <div class="w-1.5 h-1.5 bg-white rounded-full animate-bounce"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 px-6 py-20 lg:py-32 overflow-hidden">
+        <!-- Floating Elements -->
+        <div class="hidden lg:block absolute top-1/4 left-10 text-[200px] font-display font-black text-white/[0.02] -rotate-90 pointer-events-none select-none">
+            RACING
+        </div>
+        <div class="hidden lg:block absolute bottom-1/4 right-10 text-[200px] font-display font-black text-white/[0.02] rotate-90 pointer-events-none select-none">
+            AERO
+        </div>
+
+        <div class="max-w-4xl mx-auto space-y-32">
+            
+            <!-- Section 1: Introduction -->
+            <section class="scroll-reveal glass-card p-8 md:p-12 rounded-3xl relative">
+                <div class="absolute -top-6 -left-6 bg-race-red text-white p-4 font-display font-black text-3xl italic rounded-br-3xl">01</div>
+                <div class="space-y-6">
+                    <p class="text-lg md:text-xl leading-relaxed text-gray-300">
+                        如果你在路上騎著那台剛做完保養的速克達，感覺引擎運轉順暢、煞車靈敏，甚至還有點 ABS 帶來的安全感，那你得感謝一群在全世界最快賽道上，拿命去「摔」出數據的人。這場派對，我們稱之為 <span class="text-white font-bold underline decoration-race-red underline-offset-4">MotoGP</span>。
+                    </p>
+                    <div class="border-l-4 border-race-red pl-6 py-2">
+                        <h2 class="text-3xl font-display font-bold italic mb-4">這是什麼神仙比賽？：二輪界的實驗室</h2>
+                        <p class="text-gray-400">
+                            簡單來說，MotoGP 就是機車界的 F1。但它更野、更具肉搏感。與你能在車行買到的量產跑車不同，MotoGP 的賽車是「原型賽車（Prototype）」，它們不存在於任何展間，只為了在終點線前奪下那零點幾秒的差距而生。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bento Grid Stats / Context -->
+            <section class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                <div class="md:col-span-8 glass-card p-10 rounded-3xl flex flex-col justify-between group hover:border-race-red/50 transition-all duration-500 scroll-reveal">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 italic race-border">移動的實驗室</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            當代市售車標配的 ABS、循跡控制系統（TCS），甚至是近年來讓重機外型變得像鋼彈的空力翼片，最初都是在換檔聲震天響的圍欄內，由工程師們嘔心瀝血磨出來的技術結晶。這不只是速度的競技，更是 Ducati、Honda、Yamaha 等跨國企業在材料科學與流體力學上的終極軍備競賽。
+                        </p>
+                    </div>
+                    <div class="mt-8 flex gap-4">
+                        <span class="px-3 py-1 bg-white/5 rounded text-xs text-race-red font-display">#AERODYNAMICS</span>
+                        <span class="px-3 py-1 bg-white/5 rounded text-xs text-race-red font-display">#ABS</span>
+                        <span class="px-3 py-1 bg-white/5 rounded text-xs text-race-red font-display">#CARBON_FIBER</span>
+                    </div>
+                </div>
+                <div class="md:col-span-4 bg-race-red p-10 rounded-3xl text-white flex flex-col justify-center items-center scroll-reveal">
+                    <span class="text-sm font-display tracking-widest opacity-80 mb-2">MAX SPEED</span>
+                    <span class="text-7xl font-display font-black italic">366</span>
+                    <span class="text-xl font-display font-bold">KM/H</span>
+                    <p class="text-center mt-4 text-sm opacity-70">Brad Binder, Mugello 2023</p>
+                </div>
+            </section>
+
+            <!-- Section 2: History -->
+            <section class="scroll-reveal space-y-12">
+                <div class="flex items-center gap-6">
+                    <h2 class="text-4xl md:text-5xl font-display font-black italic uppercase">Evolution</h2>
+                    <div class="h-1 flex-grow bg-gradient-to-r from-race-red to-transparent"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="space-y-6">
+                        <div class="text-race-red font-display text-sm font-bold tracking-tighter">SINCE 1949</div>
+                        <h3 class="text-3xl font-bold italic">爺爺輩的賽車長怎樣？</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            在那段被車迷奉為神話的「二行程 500cc 時代」，賽車是極端暴力的化身——沒有電控系統、重量極輕，馬力爆發起來像是一頭脫韁野馬。那個時代產出了如 Kenny Roberts 這樣的傳奇，那時的車手更像是駕馭野獸的鬥牛士。
+                        </p>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="text-race-accent font-display text-sm font-bold tracking-tighter">PRESENT ERA</div>
+                        <h3 class="text-3xl font-bold italic">從「白煙」到「電控」</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            2002 年，賽事轉向四行程引擎。科技取代了那股濃烈的二行程白煙，速度變得更加「變態」。現在的車手不僅要有過人的體能，還得在時速 300 公里以上時，精準地操作儀表板上的各項參數。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Callout: European Dominance -->
+            <section class="scroll-reveal relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-race-red via-race-accent to-race-red rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                <div class="relative glass-card p-12 rounded-3xl">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold italic mb-8">現在誰才是老大？：歐洲廠隊的數據革命</h2>
+                    <div class="flex flex-col md:flex-row gap-10">
+                        <div class="flex-1 space-y-4">
+                            <p class="text-gray-300">
+                                如果你最近幾年才開始看轉播，你會發現滿場都是紅色的 <span class="text-race-red font-bold">Ducati</span>。日本雙雄 Honda 與 Yamaha 正陷入一場深刻的「中年危機」。
+                            </p>
+                            <p class="text-gray-300">
+                                歐洲廠隊完美融合了 F1 式的數據分析與航空級的空力開發，將賽車精準化到每一格數據中。這種降維打擊，讓「外星人」Marc Márquez 也不得不選擇跳槽求生。
+                            </p>
+                        </div>
+                        <div class="flex-1 bg-white/5 p-6 rounded-2xl border border-white/10">
+                            <div class="text-sm font-display mb-2 text-race-accent">COMPETITION DENSITY</div>
+                            <div class="text-4xl font-bold italic mb-4">&lt; 1.0 SEC</div>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">Gap between Top 15 riders</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Image Re-display in Context (As Banner) -->
+            <section class="scroll-reveal group">
+                <div class="relative overflow-hidden rounded-3xl aspect-video border border-white/10">
+                    <img src='https://opal.google/board/blobs/437cad54-7e20-4d93-b2a1-e6859ff83c38' alt='Aerodynamics Tech' class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-race-dark to-transparent opacity-60"></div>
+                    <div class="absolute bottom-8 left-8">
+                        <div class="text-xs font-display tracking-widest text-race-red mb-1">VISUALIZING SPEED</div>
+                        <div class="text-2xl font-bold italic">現代空力科技與極速入彎</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Tech & Controversy -->
+            <section class="scroll-reveal grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6">
+                    <h2 class="text-4xl font-display font-bold italic race-border">速度太快也有煩惱？</h2>
+                    <p class="text-gray-400">
+                        當賽車長出越來越多「翅膀」（空力套件），爭議也隨之而來。雖然翼片讓車身在高速下更穩定，但隨之產生的「髒空氣」卻讓後車極難超車。
+                    </p>
+                    <div class="bg-white/5 p-6 rounded-xl border-l-2 border-race-red">
+                        <span class="block text-race-red font-bold text-sm mb-2 uppercase italic tracking-widest">The Dilemma</span>
+                        <p class="text-sm text-gray-300 italic">"我們是在看機車賽，還是在看一群沒起飛的噴射機？"</p>
+                    </div>
+                </div>
+                <div class="space-y-6 glass-card p-10 rounded-3xl">
+                    <h3 class="text-xl font-bold mb-4 italic text-race-accent">關於「黑科技」的操作爭議</h3>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <span class="text-race-red font-bold mt-1">/</span>
+                            <span><strong>高度調整裝置：</strong>讓車手在出彎時能自動降低重心，像是作弊般的科技。</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-race-red font-bold mt-1">/</span>
+                            <span><strong>衝刺賽（Sprint）：</strong>2023 年新推出，收視率飆升但風險達到臨界點。</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-race-red font-bold mt-1">/</span>
+                            <span><strong>人性 vs 程式：</strong>比賽核心應該是操駕技術，還是工程師的程式邏輯？</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 5: Future -->
+            <section class="scroll-reveal text-center space-y-10">
+                <div class="inline-block px-4 py-1 border border-race-accent bg-race-accent/10 text-race-accent font-display tracking-widest text-xs uppercase rounded-full">
+                    2027 Road Map
+                </div>
+                <h2 class="text-5xl md:text-6xl font-display font-black italic tracking-tighter">未來我們要看什麼？</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300">
+                        <div class="text-4xl mb-4">⚖️</div>
+                        <h4 class="font-bold mb-2">集體減肥計畫</h4>
+                        <p class="text-xs text-gray-400">排氣量降為 850cc、限制空力套件、禁用高度調整裝置。讓比賽回歸純粹的車手技術 PK。</p>
+                    </div>
+                    <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300">
+                        <div class="text-4xl mb-4">🌿</div>
+                        <h4 class="font-bold mb-2">100% 永續燃料</h4>
+                        <p class="text-xs text-gray-400">讓內燃機的轟鳴能在碳中和的浪潮下繼續生存。愛地球的同時保持引擎聲浪。</p>
+                    </div>
+                    <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300">
+                        <div class="text-4xl mb-4">🎬</div>
+                        <h4 class="font-bold mb-2">全球明星秀</h4>
+                        <p class="text-xs text-gray-400">Liberty Media 入主，更多的幕後紀錄片與社群互動，打造全球體育盛宴。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer-like Conclusion -->
+            <section class="scroll-reveal py-20 border-t border-white/10 text-center">
+                <h2 class="text-3xl font-display font-bold italic mb-6">結語：給新手的觀賽小貼士</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto leading-relaxed mb-12">
+                    如果你問我，為什麼要關注這群騎著機車跑圈的人？我會建議你找機會去現場，聽聽那種足以撕裂空氣的引擎聲浪。在那一刻，所有的術語數據都不重要了，你感受到的是人類對速度最原始、最純粹的渴望。
+                </p>
+                <div class="text-2xl font-display font-black italic mb-8">
+                    下個週末，有一場時速 <span class="text-race-red">360</span> 公里的派對即將開始...
+                </div>
+                <button class="px-12 py-4 bg-race-red hover:bg-white hover:text-race-red transition-all duration-300 font-display font-black italic uppercase tracking-widest text-lg rounded-none skew-x-[-12deg]">
+                    準備好支持哪一隊了嗎？
+                </button>
+            </section>
+
+        </div>
+    </main>
+
+    <script>
+        // Simple Scroll Reveal Animation
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Parallax effect on header
+        window.addEventListener('scroll', () => {
+            const scroll = window.pageYOffset;
+            const hero = document.querySelector('header img');
+            if (hero) {
+                hero.style.transform = `scale(1.1) translateY(${scroll * 0.3}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
