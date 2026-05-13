@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotoGP 技術革新與未來趨勢報告</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        motoRed: '#E10600',
+                        motoDark: '#0B0B0B',
+                        motoGray: '#1F1F1F',
+                        accentGold: '#D4AF37',
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans TC', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #F5F5F5;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(31, 31, 31, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #E10600, #FF5F5A);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 1.5rem;
+        }
+        @media (max-width: 1024px) {
+            .bento-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 640px) {
+            .bento-grid { grid-template-columns: 1fr; }
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0B0B0B;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #E10600;
+            border-radius: 10px;
+        }
+        video, img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+    </style>
+</head>
+<body class="custom-scrollbar">
+
+    <!-- Hero Header -->
+    <header class="relative h-[60vh] flex items-center justify-center overflow-hidden border-b border-white/10">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-motoDark"></div>
+            <div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-motoRed/20 blur-[120px] rounded-full"></div>
+            <div class="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-blue-600/10 blur-[100px] rounded-full"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-4">
+            <div class="inline-block px-4 py-1 mb-4 rounded-full border border-motoRed/50 text-motoRed text-sm font-bold tracking-widest uppercase">
+                Official Report | B11208052
+            </div>
+            <h1 class="text-5xl md:text-7xl font-display font-extrabold tracking-tight mb-4">
+                MotoGP <span class="gradient-text">REVOLUTION</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
+                探究全球二輪最高殿堂的技術演進、空力革命與 2027 年的永續轉型。
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-12 space-y-24">
+        
+        <!-- SECTION 1: INFOGRAPHIC (TOP) -->
+        <section class="space-y-8 animate-float">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="h-8 w-2 bg-motoRed"></div>
+                <h2 class="text-3xl font-display font-bold uppercase tracking-wider">技術數據可視化</h2>
+            </div>
+            <div class="glass-card p-2 md:p-6 shadow-2xl">
+                <img src='https://opal.google/board/blobs/5bd8a28d-7aae-4d0f-bfc3-c9556da7b79f' alt='MotoGP Infographic' class="w-full h-auto object-cover rounded-xl" />
+            </div>
+        </section>
+
+        <!-- SECTION 2: BENTO SUMMARY -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="md:col-span-2 glass-card p-8 flex flex-col justify-center">
+                <h3 class="text-2xl font-bold mb-4 text-motoRed">核心摘要</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <span class="text-motoRed mt-1">●</span>
+                        <p><strong class="text-white">技術演進：</strong> 從引擎極限轉向空氣動力學與電控系統的精密對決。</p>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-motoRed mt-1">●</span>
+                        <p><strong class="text-white">關鍵應用：</strong> 定風翼 (Winglets) 與車身高度調節裝置 (RHD) 成為標配。</p>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-motoRed mt-1">●</span>
+                        <p><strong class="text-white">未來規章：</strong> 2027 年邁入 850cc 時代，全面採用 100% 永續燃料。</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="glass-card p-8 flex flex-col items-center justify-center text-center bg-motoRed/5">
+                <div class="text-6xl font-display font-black text-motoRed mb-2">1000<span class="text-sm font-normal">cc</span></div>
+                <div class="text-gray-400 uppercase tracking-widest text-xs">當前引擎排氣量</div>
+                <div class="w-full h-px bg-white/10 my-6"></div>
+                <div class="text-6xl font-display font-black text-white mb-2">2027</div>
+                <div class="text-gray-400 uppercase tracking-widest text-xs">大規章變動元年</div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: VIDEO (MIDDLE) -->
+        <section class="space-y-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <h2 class="text-3xl font-display font-bold mb-4">場上瞬間：動態影像分析</h2>
+                <p class="text-gray-400">觀察賽車如何透過精密空力套件在高速彎道中保持穩定。此影片展示了起跑、空力組件及極限過彎的氛圍。</p>
+            </div>
+            <div class="relative group max-w-5xl mx-auto">
+                <div class="absolute -inset-1 bg-gradient-to-r from-motoRed to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                <div class="relative bg-black rounded-2xl overflow-hidden">
+                    <video src='https://opal.google/board/blobs/3623d58d-949f-4409-b1ec-b312ce07060e' alt='MotoGP Action Video' controls class="w-full h-full aspect-video object-cover"></video>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: DETAILED REPORT (BOTTOM) -->
+        <section class="glass-card overflow-hidden">
+            <div class="bg-white/5 px-8 py-6 border-b border-white/10">
+                <h2 class="text-2xl font-bold flex items-center gap-3">
+                    <svg class="w-6 h-6 text-motoRed" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    專題報告：MotoGP 發展現況、技術革新與未來趨勢
+                </h2>
+            </div>
+            
+            <div class="p-8 md:p-12 space-y-12 text-gray-300 leading-relaxed font-light">
+                
+                <div class="grid md:grid-cols-12 gap-8">
+                    <aside class="md:col-span-4">
+                        <h4 class="text-motoRed font-bold text-sm uppercase tracking-widest mb-2">Chapter 01</h4>
+                        <h3 class="text-white text-xl font-bold mb-4">引言與歷史背景</h3>
+                    </aside>
+                    <div class="md:col-span-8">
+                        <p>世界摩托車錦標賽 (Grand Prix Motorcycle Racing, MotoGP) 是由國際摩托車賽車協會 (FIM) 所管轄。自 1949 年成立以來，賽事級別經歷多次更迭。2002 年為賽事的重要轉折點，最高級別由傳統的 500cc 二行程引擎轉型為 990cc 四行程引擎，並正式定名為「MotoGP」。目前參賽車輛均搭載 1000cc 四行程引擎，代表了機械工程的巔峰。</p>
+                    </div>
+                </div>
+
+                <div class="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+                <div class="grid md:grid-cols-12 gap-8">
+                    <aside class="md:col-span-4">
+                        <h4 class="text-motoRed font-bold text-sm uppercase tracking-widest mb-2">Chapter 02</h4>
+                        <h3 class="text-white text-xl font-bold mb-4">當前核心技術變革</h3>
+                    </aside>
+                    <div class="md:col-span-8 space-y-6">
+                        <div>
+                            <h5 class="text-white font-semibold mb-2">1. 空氣動力學 (Aerodynamics)</h5>
+                            <p>杜卡迪 (Ducati) 於 2010 年代中期引進定風翼技術，徹底改變了賽車外觀。其主要目的是產生足夠的下壓力，抑制車輛在出彎加速時產生的「翹輪」(Wheelie) 現象，並提升高速過彎的穩定性。</p>
+                        </div>
+                        <div>
+                            <h5 class="text-white font-semibold mb-2">2. 車身高度調節裝置 (RHD)</h5>
+                            <p>包含「起跑裝置」與動態操作的 RHD。車手能在直線加速階段降低賽車後半部分的重心，減少阻力並優化加速效率。</p>
+                        </div>
+                        <div>
+                            <h5 class="text-white font-semibold mb-2">3. 統一電子控制單元 (Unified ECU)</h5>
+                            <p>2016 年起規定所有賽車必須使用官方統一的 ECU 與軟體，旨在縮小廠隊間的開發差距，增加賽事精彩度。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+                <div class="grid md:grid-cols-12 gap-8">
+                    <aside class="md:col-span-4">
+                        <h4 class="text-motoRed font-bold text-sm uppercase tracking-widest mb-2">Chapter 03</h4>
+                        <h3 class="text-white text-xl font-bold mb-4">重要車隊與競爭態勢</h3>
+                    </aside>
+                    <div class="md:col-span-8">
+                        <div class="flex flex-wrap gap-4">
+                            <div class="bg-white/5 border border-white/10 p-4 rounded-xl flex-1 min-w-[240px]">
+                                <span class="text-motoRed font-bold block mb-2">歐洲勢力</span>
+                                <p class="text-sm">杜卡迪聯想車隊、艾普利亞與 KTM 憑藉強大技術開發實力，在近幾年展現了統治級地位。</p>
+                            </div>
+                            <div class="bg-white/5 border border-white/10 p-4 rounded-xl flex-1 min-w-[240px]">
+                                <span class="text-motoRed font-bold block mb-2">日系廠隊</span>
+                                <p class="text-sm">本田與山葉雖有輝煌歷史，但在空力與電控系統整合上正處於轉型陣痛期。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+                <div class="grid md:grid-cols-12 gap-8">
+                    <aside class="md:col-span-4">
+                        <h4 class="text-motoRed font-bold text-sm uppercase tracking-widest mb-2">Chapter 04</h4>
+                        <h3 class="text-white text-xl font-bold mb-4">2027 年新時代展望</h3>
+                    </aside>
+                    <div class="md:col-span-8">
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4 group">
+                                <div class="w-12 h-12 rounded-lg bg-motoRed/20 flex items-center justify-center text-motoRed font-bold group-hover:bg-motoRed group-hover:text-white transition-colors">850</div>
+                                <p>引擎規格由 1000cc 調降至 850cc，控制過高的極速。</p>
+                            </div>
+                            <div class="flex items-center gap-4 group">
+                                <div class="w-12 h-12 rounded-lg bg-motoRed/20 flex items-center justify-center text-motoRed font-bold group-hover:bg-motoRed group-hover:text-white transition-colors">NO</div>
+                                <p>全面禁用起跑與車身高度調節裝置，回歸純粹操駕。</p>
+                            </div>
+                            <div class="flex items-center gap-4 group">
+                                <div class="w-12 h-12 rounded-lg bg-motoRed/20 flex items-center justify-center text-motoRed font-bold group-hover:bg-motoRed group-hover:text-white transition-colors">BIO</div>
+                                <p>達成 100% 採用非石化來源的永續燃料，實現碳中和。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CONCLUSION -->
+                <div class="bg-motoRed/10 p-8 rounded-3xl border border-motoRed/20 mt-12">
+                    <h3 class="text-white text-xl font-bold mb-4">結論</h3>
+                    <p class="text-gray-300">MotoGP 正處於技術巔峰與轉型的交匯點。2027 年新規的公佈，預示賽事將走向更節能、更依賴純粹技術的方向。這不僅是一場速度的競賽，更是全球最高端的摩托車技術展示平臺。</p>
+                </div>
+
+                <!-- REFERENCES -->
+                <div class="pt-8 text-sm text-gray-500">
+                    <h4 class="font-bold mb-4 text-gray-400">引用文獻來源</h4>
+                    <ul class="list-decimal list-inside space-y-1">
+                        <li>FIM (2024). FIM MotoGP™ World Championship: Technical Regulations.</li>
+                        <li>Dorna Sports (2024). Evolution of MotoGP: From 500cc to the New 2027 Era.</li>
+                        <li>Motorsport.com (2023-2024). The Impact of Aerodynamics in modern MotoGP.</li>
+                        <li>Liberty Media Press Release (2024). Acquisition of Dorna Sports.</li>
+                        <li>Various review articles on the 2027 MotoGP regulation changes (2024).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- CENTERED FOOTER -->
+    <div class="py-16 text-center border-t border-white/5">
+        <p class="text-sm tracking-widest text-gray-400 uppercase">
+            【主題探索報告】by <span class="italic text-motoRed font-bold">Famidoc Chang</span>
+        </p>
+    </div>
+
+</body>
+</html>
