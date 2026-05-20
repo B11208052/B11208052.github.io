@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triumph 400 台灣發表特設情報誌 - Thruxton 400 / Tracker 400</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        triumph: {
+                            gold: '#D4AF37',
+                            goldHover: '#C59B27',
+                            dark: '#0D0E12',
+                            card: '#16181F',
+                            accent: '#1E222D',
+                            textMuted: '#9CA3AF'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap');
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #0D0E12;
+            color: #F3F4F6;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0D0E12;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E222D;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+
+    <!-- 導覽列 -->
+    <nav class="sticky top-0 z-50 bg-triumph-dark/95 border-b border-triumph-accent backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-3">
+                    <!-- SVG Triumph-style Logo Crown -->
+                    <svg class="w-10 h-10 text-triumph-gold" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L15 8L22 9L17 14L18.5 21L12 17.5L5.5 21L7 14L2 9L9 8L12 2Z"/>
+                    </svg>
+                    <div>
+                        <span class="text-xl font-black tracking-widest text-white">TRIUMPH</span>
+                        <span class="block text-xs text-triumph-gold font-bold tracking-wider">400 SERIES TAIWAN</span>
+                    </div>
+                </div>
+                <!-- 桌面版選單 -->
+                <div class="hidden md:flex space-x-8 text-sm font-medium">
+                    <a href="#hero" class="text-gray-300 hover:text-triumph-gold transition-colors">新車首頁</a>
+                    <a href="#compare" class="text-gray-300 hover:text-triumph-gold transition-colors">車款比拼</a>
+                    <a href="#resources" class="text-gray-300 hover:text-triumph-gold transition-colors">資源庫</a>
+                    <a href="#faq" class="text-gray-300 hover:text-triumph-gold transition-colors">常見問答</a>
+                    <a href="#ai-assistant" class="text-triumph-gold font-semibold flex items-center space-x-1 hover:text-white transition-colors">
+                        <i class="fa-solid fa-robot"></i>
+                        <span>AI 諮詢專家</span>
+                    </a>
+                </div>
+                <!-- 行動版選單按鈕 -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-triumph-gold focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- 行動版選單選單 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-triumph-accent border-b border-triumph-dark px-4 py-4 space-y-3">
+            <a href="#hero" class="block text-gray-300 hover:text-triumph-gold py-2">新車首頁</a>
+            <a href="#compare" class="block text-gray-300 hover:text-triumph-gold py-2">車款比拼</a>
+            <a href="#resources" class="block text-gray-300 hover:text-triumph-gold py-2">資源庫</a>
+            <a href="#faq" class="block text-gray-300 hover:text-triumph-gold py-2">常見問答</a>
+            <a href="#ai-assistant" class="block text-triumph-gold font-semibold py-2"><i class="fa-solid fa-robot mr-2"></i>AI 諮詢專家</a>
+        </div>
+    </nav>
+
+    <!-- 主頁 Hero Section -->
+    <section id="hero" class="relative overflow-hidden bg-gradient-to-b from-triumph-dark via-triumph-accent to-triumph-dark py-20 px-4">
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <!-- 幾何復古背景網格 -->
+            <div class="absolute inset-0 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-triumph-gold/10 text-triumph-gold border border-triumph-gold/20 mb-6">
+                台灣首發上市資訊特刊
+            </span>
+            <h1 class="text-4xl sm:text-6xl font-black text-white tracking-tight leading-tight">
+                原汁原味的英倫魂 <br class="hidden sm:block">
+                <span class="text-triumph-gold">Triumph 400 雙車系</span> 狂潮襲台！
+            </h1>
+            <p class="mt-6 text-lg sm:text-xl text-triumph-textMuted max-w-3xl mx-auto font-light">
+                繼 Speed 400 與 Scrambler 400X 之後，凱旋 400 家族再度向兩端強烈延伸！帶有極致優雅 Cafe Racer 魅力的 <span class="text-white font-medium">Thruxton 400</span>，與硬派野性、充滿泥地競速感的 <span class="text-white font-medium">Tracker 400</span> 正式登場，以超甜價格 20.98 萬起震撼黃牌大單缸市場！
+            </p>
+
+            <!-- 兩台車主視覺快速卡片 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 text-left">
+                <!-- Thruxton 400 -->
+                <div class="bg-triumph-card border border-triumph-accent p-8 rounded-2xl shadow-xl hover:border-triumph-gold/40 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="px-3 py-1 bg-yellow-900/40 text-triumph-gold border border-triumph-gold/30 rounded text-xs font-bold">紳士英倫 Cafe Racer</span>
+                            <span class="text-xs text-triumph-textMuted">售價 NT$ <strong class="text-white text-lg">21.98萬</strong> 起</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-motorcycle text-triumph-gold"></i> Thruxton 400
+                        </h3>
+                        <p class="text-sm text-triumph-textMuted mt-3 leading-relaxed">
+                            搭載復古精緻的子彈頭半罩（龐）、戰鬥向下斜傾的分離把與牛角後視鏡。油箱採子彈水滴造型更加好夾。標配拆卸方便的雙螺絲原廠單座蓋與全新後扶手。適合穿上筆挺西裝，優雅穿梭於都市街道。
+                        </p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-triumph-accent px-2 py-1 rounded text-xs text-gray-300">子彈頭半罩</span>
+                            <span class="bg-triumph-accent px-2 py-1 rounded text-xs text-gray-300">分離把 (-24.6cm)</span>
+                            <span class="bg-triumph-accent px-2 py-1 rounded text-xs text-gray-300">座高 795mm</span>
+                            <span class="bg-triumph-accent px-2 py-1 rounded text-xs text-gray-300">四款車色</span>
+                        </div>
+                    </div>
+                    <a href="#compare" onclick="selectModel('thruxton')" class="mt-8 block text-center bg-triumph-gold text-triumph-dark font-bold py-2.5 rounded-lg hover:bg-triumph-goldHover transition-colors text-sm">
+                        查看規格細節
+                    </a>
+                </div>
+
+                <!-- Tracker 400 -->
+                <div class="bg-triumph-card border border-triumph-accent p-8 rounded-2xl shadow-xl hover:border-triumph-gold/40 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="px-3 py-1 bg-orange-950/40 text-orange-400 border border-orange-500/30 rounded text-xs font-bold">狂野賽事 Tracker Style</span>
+                            <span class="text-xs text-triumph-textMuted">售價 NT$ <strong class="text-white text-lg">20.98萬</strong> 起</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-flag-checkered text-orange-400"></i> Tracker 400
+                        </h3>
+                        <p class="text-sm text-triumph-textMuted mt-3 leading-relaxed">
+                            彰顯野性與熱血。配有獨特方形大燈護罩、兩側號碼牌樣式、消去邊角的硬朗油箱、雙出排氣管與原廠單座蓋。手把位置低、寬度增加，騎乘姿勢極具滑胎車或大單缸越野車的自由掌控感。
+                        </p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-triumph-accent px-2 py-1 rounded text-xs text-gray-300">方形護罩</span>
+                            <span class="bg-triumph-accent px-2 py-1 rounded text-xs text-gray-300">寬手把 (+2.3cm)</span>
+                            <span class="bg-triumph-accent px-2 py-1 rounded text-xs text-gray-300">座高 805mm</span>
+                            <span class="bg-triumph-accent px-2 py-1 rounded text-xs text-gray-300">三款車色</span>
+                        </div>
+                    </div>
+                    <a href="#compare" onclick="selectModel('tracker')" class="mt-8 block text-center border border-triumph-gold text-triumph-gold font-bold py-2.5 rounded-lg hover:bg-triumph-gold hover:text-triumph-dark transition-all text-sm">
+                        查看規格細節
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 車款深度比拼與互動計算器 -->
+    <section id="compare" class="py-20 bg-triumph-dark border-t border-triumph-accent px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-black text-white">兩大全新悍將 規格全解密</h2>
+                <p class="text-triumph-textMuted mt-4 max-w-xl mx-auto">用同樣的硬體架構，凱旋卻雕琢出截然不同的騎乘靈魂。快來看看哪一台最適合你的身形與態度！</p>
+            </div>
+
+            <!-- 動力大變革特寫 -->
+            <div class="bg-gradient-to-r from-yellow-950/20 to-triumph-card border border-triumph-accent p-6 sm:p-8 rounded-2xl mb-12 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-5">
+                    <div class="w-16 h-16 rounded-full bg-triumph-gold/10 flex items-center justify-center text-triumph-gold text-2xl flex-shrink-0">
+                        <i class="fa-solid fa-gauge-high"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-white flex items-center gap-2">
+                            動力壓榨！最大馬力提升至 <span class="text-triumph-gold font-extrabold text-2xl">42 匹</span>
+                        </h4>
+                        <p class="text-sm text-triumph-textMuted mt-1">雖然是沿用原 400 引擎結構，但工程師硬是把最大輸出從 40 匹拉拔到 42 匹！</p>
+                    </div>
+                </div>
+                <div class="text-left md:text-right border-l-4 md:border-l-0 md:border-r-4 border-triumph-gold pl-4 md:pr-4 md:pl-0">
+                    <span class="block text-xs text-triumph-textMuted">爆發轉速區延後</span>
+                    <span class="text-lg font-bold text-white">從原本的 8,000 轉延後至 <strong class="text-triumph-gold text-xl">9,000 轉</strong> 爆發</span>
+                    <span class="block text-xs text-triumph-textMuted mt-1">單缸氣更長，高轉騎乘感無比順暢！海外實測極速高達 140+ km/h，預估極速可達 150 km/h</span>
+                </div>
+            </div>
+
+            <!-- 幾何尺寸與騎乘姿勢對比 -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- 視覺化圖表對比 (5 cols) -->
+                <div class="lg:col-span-5 bg-triumph-card border border-triumph-accent p-6 rounded-2xl">
+                    <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-child-reaching text-triumph-gold"></i>
+                        <span>人因工學與騎姿變化對比</span>
+                    </h3>
+
+                    <div class="space-y-6">
+                        <!-- 1. 座高 -->
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <span class="text-triumph-textMuted">座高限制 (越低越好跨)</span>
+                                <span class="text-white font-medium">Thruxton: 795mm | Tracker: 805mm</span>
+                            </div>
+                            <div class="relative w-full h-3 bg-triumph-accent rounded-full overflow-hidden">
+                                <div class="absolute top-0 left-0 h-full bg-triumph-gold rounded-full transition-all" style="width: 79%;"></div>
+                                <div class="absolute top-0 left-0 h-full bg-orange-500 rounded-full opacity-60 transition-all" style="width: 85%;"></div>
+                            </div>
+                            <span class="block text-[10px] text-triumph-textMuted mt-1">座高低 795mm 使 Thruxton 更親民好著地，Tracker 則較有高挑視野</span>
+                        </div>
+
+                        <!-- 2. 手把高度 -->
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <span class="text-triumph-textMuted">手把垂直下移 (越多越戰鬥趴下)</span>
+                                <span class="text-white font-medium">Thruxton: -24.6 cm | Tracker: -13.4 cm</span>
+                            </div>
+                            <div class="relative w-full h-3 bg-triumph-accent rounded-full overflow-hidden">
+                                <div class="absolute top-0 left-0 h-full bg-triumph-gold rounded-full transition-all" style="width: 95%;"></div>
+                                <div class="absolute top-0 left-0 h-full bg-orange-500 rounded-full opacity-60 transition-all" style="width: 52%;"></div>
+                            </div>
+                            <span class="block text-[10px] text-triumph-textMuted mt-1">Thruxton 下移量驚人，姿勢直逼街跑車（約 R3 / 忍 4 戰鬥感），但兼顧通勤舒適</span>
+                        </div>
+
+                        <!-- 3. 手把寬度 -->
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <span class="text-triumph-textMuted">手把寬度調整</span>
+                                <span class="text-white font-medium">Thruxton: -4.0 cm (內收) | Tracker: +2.3 cm (外寬)</span>
+                            </div>
+                            <div class="relative w-full h-3 bg-triumph-accent rounded-full overflow-hidden">
+                                <div class="absolute top-0 left-0 h-full bg-triumph-gold rounded-full transition-all" style="width: 40%;"></div>
+                                <div class="absolute top-0 left-0 h-full bg-orange-500 rounded-full opacity-60 transition-all" style="width: 80%;"></div>
+                            </div>
+                            <span class="block text-[10px] text-triumph-textMuted mt-1">Tracker 寬手把給予極強的滑胎/街車操控自豪感，Thruxton 則精巧俐落</span>
+                        </div>
+
+                        <!-- 4. 腳踏後移量 -->
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <span class="text-triumph-textMuted">腳踏位置變化 (兩台皆後移)</span>
+                                <span class="text-white font-medium">皆往後移了 8.6 公分 (+8.6 cm)</span>
+                            </div>
+                            <div class="relative w-full h-3 bg-triumph-accent rounded-full overflow-hidden">
+                                <div class="absolute top-0 left-0 h-full bg-triumph-gold rounded-full transition-all" style="width: 86%;"></div>
+                            </div>
+                            <span class="block text-[10px] text-triumph-textMuted mt-1">雙車皆採運動化後移設定，腿部夾持感更緊密，熱血十足！</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 詳細資料對照表 (7 cols) -->
+                <div class="lg:col-span-7 bg-triumph-card border border-triumph-accent rounded-2xl overflow-hidden">
+                    <table class="w-full text-left text-sm">
+                        <thead class="bg-triumph-accent text-white font-semibold">
+                            <tr>
+                                <th class="p-4">項目 / 細節</th>
+                                <th class="p-4 text-triumph-gold">Thruxton 400 (Cafe)</th>
+                                <th class="p-4 text-orange-400">Tracker 400 (Dirt)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-triumph-accent">
+                            <tr>
+                                <td class="p-4 font-medium text-white">台灣首發售價</td>
+                                <td class="p-4">NT$ 21.98 萬起</td>
+                                <td class="p-4">NT$ 20.98 萬起</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-medium text-white">最大輸出馬力</td>
+                                <td class="p-4 text-triumph-gold font-bold">42 匹 (9,000 rpm)</td>
+                                <td class="p-4 text-triumph-gold font-bold">42 匹 (9,000 rpm)</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-medium text-white">油箱造型特色</td>
+                                <td class="p-4 text-gray-300">子彈水滴造型，大腿夾持性順暢極佳</td>
+                                <td class="p-4 text-gray-300">兩側消出稜角硬邊，具視覺肌肉感</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-medium text-white">把手設計風格</td>
+                                <td class="p-4 text-gray-300">戰鬥分離把、牛角鏡</td>
+                                <td class="p-4 text-gray-300">一體式寬手把、滑胎自由騎乘姿勢</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-medium text-white">車身標誌組件</td>
+                                <td class="p-4 text-gray-300">子彈圓弧整流罩（龐）、後扶手、單座蓋</td>
+                                <td class="p-4 text-gray-300">方型大燈罩、側邊號碼牌、原廠單座蓋</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-medium text-white">烤漆貼紙處理</td>
+                                <td class="p-4 text-gray-300">精緻融入烤漆內層，平滑無瑕疵凸起</td>
+                                <td class="p-4 text-gray-300">精緻融入烤漆內層，平滑無瑕疵凸起</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-medium text-white">排氣管形式</td>
+                                <td class="p-4 text-gray-300">高雅精緻排氣管</td>
+                                <td class="p-4 text-gray-300">硬派雙出排氣管（沿用 Scrambler 系列）</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-medium text-white">配備電控系統</td>
+                                <td class="p-4 text-gray-300" colspan="2">指針+數位單色雙合一儀表（刻度180）、線傳油門、TCS可關閉循跡系統、ABS煞車、USB-C充電接口、ByBre煞車卡鉗系統、掛瓶後避震器</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 騎士資源與配件庫 (帶搜尋框) -->
+    <section id="resources" class="py-20 bg-triumph-accent/30 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <h2 class="text-3xl font-black text-white">騎士專屬資源與配件庫</h2>
+                    <p class="text-triumph-textMuted mt-2">尋找官方改裝配件、保養撇步及台灣車迷改裝方向</p>
+                </div>
+                <!-- 搜尋框 -->
+                <div class="relative w-full md:w-80">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-400">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                    <input type="text" id="search-input" onkeyup="filterResources()" placeholder="搜尋配件、焊接改善、原廠精品..." class="w-full bg-triumph-card border border-triumph-accent rounded-xl pl-10 pr-4 py-3 text-sm focus:outline-none focus:border-triumph-gold text-white transition-all">
+                </div>
+            </div>
+
+            <!-- 分類標籤 -->
+            <div class="flex flex-wrap gap-2 mb-8">
+                <button onclick="filterCategory('all')" class="category-btn active bg-triumph-gold text-triumph-dark px-4 py-1.5 rounded-full text-xs font-bold transition-all">全部資源</button>
+                <button onclick="filterCategory('parts')" class="category-btn bg-triumph-card text-gray-300 border border-triumph-accent px-4 py-1.5 rounded-full text-xs font-bold transition-all hover:border-triumph-gold/40">原廠改裝精品</button>
+                <button onclick="filterCategory('build')" class="category-btn bg-triumph-card text-gray-300 border border-triumph-accent px-4 py-1.5 rounded-full text-xs font-bold transition-all hover:border-triumph-gold/40">車輛組裝改善</button>
+                <button onclick="filterCategory('mixmatch')" class="category-btn bg-triumph-card text-gray-300 border border-triumph-accent px-4 py-1.5 rounded-full text-xs font-bold transition-all hover:border-triumph-gold/40">模組化混搭流用</button>
+            </div>
+
+            <!-- 資源網格 -->
+            <div id="resources-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- 卡片 1 -->
+                <div class="resource-card bg-triumph-card border border-triumph-accent rounded-2xl p-6 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-category="parts" data-keywords="led 方向燈 圓形 復古配件">
+                    <div>
+                        <div class="text-triumph-gold text-xs font-bold mb-3 flex items-center gap-1.5">
+                            <i class="fa-solid fa-circle-nodes"></i> 原廠改裝精品
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">LED 經典圓形方向燈組</h4>
+                        <p class="text-sm text-triumph-textMuted leading-relaxed">
+                            原廠推出的圓形 LED 方向燈配件，極致老味。相較於標配方向燈，換上它更能展現傳奇 Cafe Racer 與 Scrambler 傳統風格，細節質感十分到位。
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-triumph-accent/60 flex justify-between items-center">
+                        <span class="text-xs text-triumph-gold font-mono">完整度：★★★★★</span>
+                        <span class="text-[11px] text-triumph-textMuted">原廠專屬螺絲孔直上</span>
+                    </div>
+                </div>
+
+                <!-- 卡片 2 -->
+                <div class="resource-card bg-triumph-card border border-triumph-accent rounded-2xl p-6 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-category="parts" data-keywords="金屬 下護板 護罩 引擎保護">
+                    <div>
+                        <div class="text-triumph-gold text-xs font-bold mb-3 flex items-center gap-1.5">
+                            <i class="fa-solid fa-circle-nodes"></i> 原廠改裝精品
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">金屬引擎下護罩</h4>
+                        <p class="text-sm text-triumph-textMuted leading-relaxed">
+                            專屬高質感金屬防護擋板，能填補引擎底部的空曠感，同時保護排氣管頭段與引擎底部免於碎石撞擊，讓兩款 400 視覺重心更顯飽滿霸氣。
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-triumph-accent/60 flex justify-between items-center">
+                        <span class="text-xs text-triumph-gold font-mono">實用度：★★★★★</span>
+                        <span class="text-[11px] text-triumph-textMuted">推薦 Tracker 強烈選配</span>
+                    </div>
+                </div>
+
+                <!-- 卡片 3 -->
+                <div class="resource-card bg-triumph-card border border-triumph-accent rounded-2xl p-6 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-category="build" data-keywords="焊接 焊點改善 印度代工 質感遮蔽">
+                    <div>
+                        <div class="text-triumph-gold text-xs font-bold mb-3 flex items-center gap-1.5">
+                            <i class="fa-solid fa-screwdriver-wrench"></i> 車輛組裝改善
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">焊點與金屬工法優化解密</h4>
+                        <p class="text-sm text-triumph-textMuted leading-relaxed">
+                            針對過去印度生產被車友詬病的車架魚鱗焊不夠平滑美觀問題。在這次 Thruxton/Tracker 車系上，凱旋透過巧妙設計將大部分外露焊點進行完美的遮蔽或融入車底結構，外觀質感全面翻新。
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-triumph-accent/60 flex justify-between items-center">
+                        <span class="text-xs text-green-400 font-mono">細節升級：優異</span>
+                        <span class="text-[11px] text-triumph-textMuted">實車觀賞完美隱藏</span>
+                    </div>
+                </div>
+
+                <!-- 卡片 4 -->
+                <div class="resource-card bg-triumph-card border border-triumph-accent rounded-2xl p-6 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-category="mixmatch" data-keywords="流用 混搭 鋼絲框 speed scrambler 模組化">
+                    <div>
+                        <div class="text-triumph-gold text-xs font-bold mb-3 flex items-center gap-1.5">
+                            <i class="fa-solid fa-puzzle-piece"></i> 模組化混搭流用
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">鋼絲框與配件流用可能性</h4>
+                        <p class="text-sm text-triumph-textMuted leading-relaxed">
+                            400 家族採用極高共用底盤平台。Tracker 400 車主若想搭配正統鋼絲框，可考慮流用 Scrambler 400X（Ssim 400）的鋼絲輪框組；同理，Speed 400 車主亦可收購這兩台車退下來的原廠精緻快拆單座蓋進行直上。
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-triumph-accent/60 flex justify-between items-center">
+                        <span class="text-xs text-blue-400 font-mono">可玩度：★★★★★</span>
+                        <span class="text-[11px] text-triumph-textMuted">同家族模組高度共用</span>
+                    </div>
+                </div>
+
+                <!-- 卡片 5 -->
+                <div class="resource-card bg-triumph-card border border-triumph-accent rounded-2xl p-6 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-category="build" data-keywords="烤漆 貼紙 手路 無瑕疵">
+                    <div>
+                        <div class="text-triumph-gold text-xs font-bold mb-3 flex items-center gap-1.5">
+                            <i class="fa-solid fa-screwdriver-wrench"></i> 車輛組裝改善
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">高階烤漆融合貼紙工法</h4>
+                        <p class="text-sm text-triumph-textMuted leading-relaxed">
+                            以往二十萬級距入門車的彩貼多採直接貼附於金屬表面，容易受潮翻起。這兩款新車油箱上的凱旋專屬彩貼（含 Tracker 號碼塗裝）皆採用「進爐烤漆內層融合技術」，觸摸完全無縫、無死角、無貼紙邊緣感。
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-triumph-accent/60 flex justify-between items-center">
+                        <span class="text-xs text-green-400 font-mono">觸感：極致平滑</span>
+                        <span class="text-[11px] text-triumph-textMuted">經典手路完美下放</span>
+                    </div>
+                </div>
+
+                <!-- 卡片 6 -->
+                <div class="resource-card bg-triumph-card border border-triumph-accent rounded-2xl p-6 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-category="mixmatch" data-keywords="防滑貼 油箱貼 t120 夾持 推薦">
+                    <div>
+                        <div class="text-triumph-gold text-xs font-bold mb-3 flex items-center gap-1.5">
+                            <i class="fa-solid fa-puzzle-piece"></i> 模組化混搭流用
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">復古橡膠防滑油箱貼</h4>
+                        <p class="text-sm text-triumph-textMuted leading-relaxed">
+                            雖然 Thruxton 400 水滴油箱的夾持感優異，但兩款新車都非常推薦加裝類似經典 T120 風格的黑色條紋復古防滑橡膠油箱貼。除了防刮之外，更能大幅增進長途或過彎煞車時的膝蓋安定感。
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-triumph-accent/60 flex justify-between items-center">
+                        <span class="text-xs text-blue-400 font-mono">視覺感：100分</span>
+                        <span class="text-[11px] text-triumph-textMuted">副廠或T120通用修改</span>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- 無搜尋結果提示 -->
+            <div id="no-results" class="hidden text-center py-12">
+                <i class="fa-regular fa-folder-open text-gray-500 text-4xl mb-4"></i>
+                <p class="text-triumph-textMuted">找不到符合條件的資源或配件，試試更換搜尋字詞吧！</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常見問答 (FAQ Accordion) -->
+    <section id="faq" class="py-20 bg-triumph-dark border-t border-triumph-accent px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-black text-white">台灣車友最關心問答</h2>
+                <p class="text-triumph-textMuted mt-4">為您解答關於台灣發表新車最刁鑽的車主問題</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="faq-item bg-triumph-card border border-triumph-accent rounded-xl overflow-hidden transition-colors">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-6 text-left focus:outline-none">
+                        <span class="text-base sm:text-lg font-bold text-white pr-4">這一次的 Thruxton 400 與 Tracker 400 在台灣上市價格是多少？車色有哪些？</span>
+                        <i class="fa-solid fa-chevron-down text-triumph-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-sm text-triumph-textMuted leading-relaxed border-t border-triumph-accent/40 pt-4">
+                        <p class="mb-2"><strong>Tracker 400：</strong>台灣建議售價自 <span class="text-white font-semibold">20.98 萬</span> 起，總共引進 3 種車色款式搭配選擇。</p>
+                        <p><strong>Thruxton 400：</strong>因增加了半罩頭罩整流罩，結構與配件工藝略顯複雜，建議售價自 <span class="text-white font-semibold">21.98 萬</span> 起，引進多達 4 種車色讓車友穿搭不撞車。</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item bg-triumph-card border border-triumph-accent rounded-xl overflow-hidden transition-colors">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-6 text-left focus:outline-none">
+                        <span class="text-base sm:text-lg font-bold text-white pr-4">聽說引擎跟 Speed 400 一樣，那動力的 42 匹是怎麼壓榨出來的？</span>
+                        <i class="fa-solid fa-chevron-down text-triumph-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-sm text-triumph-textMuted leading-relaxed border-t border-triumph-accent/40 pt-4">
+                        引擎硬體主架構相同，但凱旋工程師把「轉速極限」向上延申。過去 Speed 400 的 40 匹馬力是在 8000 轉爆發；<strong>這次兩台新車將最大轉速爆發點推升到了 9000 轉，從而拉出 42 匹的優異數據。</strong> 對於單缸車來說，這 1000 轉的氣更長、延伸性更好，高轉的拉扯與流暢體驗有著非常巨大的正向改變！
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item bg-triumph-card border border-triumph-accent rounded-xl overflow-hidden transition-colors">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-6 text-left focus:outline-none">
+                        <span class="text-base sm:text-lg font-bold text-white pr-4">實車出廠有直接付贈單座蓋嗎？會不會需要工具拆卸？</span>
+                        <i class="fa-solid fa-chevron-down text-triumph-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-sm text-triumph-textMuted leading-relaxed border-t border-triumph-accent/40 pt-4">
+                        <strong>是的！這次台灣發表引進的車型「原廠標配就直接附贈單座蓋」</strong>，無須像過去一樣進行昂貴的選配。
+                        拆卸部分：只需要使用隨車工具，將單座蓋底部的兩顆螺絲扭開，即可輕鬆將單座蓋拿掉，快速恢復雙載狀態，設計非常貼心。
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item bg-triumph-card border border-triumph-accent rounded-xl overflow-hidden transition-colors">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-6 text-left focus:outline-none">
+                        <span class="text-base sm:text-lg font-bold text-white pr-4">兩台車的騎乘姿勢到底差多少？會不會很累？</span>
+                        <i class="fa-solid fa-chevron-down text-triumph-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-sm text-triumph-textMuted leading-relaxed border-t border-triumph-accent/40 pt-4">
+                        <p class="mb-2"><strong>Thruxton 400 (Cafe Racer)：</strong>手把高度向下降低了 24.6 公分、寬度向內收窄 4 公分，腳踏後移 8.6 公分。整體有些微街跑車的戰鬥姿態（類似 R3 或 Ninja 400 的中等舒適戰鬥感），不過凱旋考慮到日常通勤，完全不會像公升級純仿賽那樣極端疲憊，帥氣追焦感拉滿！</p>
+                        <p><strong>Tracker 400 (Dirt Tracker)：</strong>手把高度向下微移 13.4 公分，但寬度加寬了 2.3 公分，腳踏同樣後移 8.6 公分。騎乘感覺更像高性能街車或 KTM 的街車(Duke)系列，極具滑胎/越野控制的寬闊與自由感。</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item bg-triumph-card border border-triumph-accent rounded-xl overflow-hidden transition-colors">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-6 text-left focus:outline-none">
+                        <span class="text-base sm:text-lg font-bold text-white pr-4">這台入門凱旋有充電座嗎？印度製的組裝細節好嗎？</span>
+                        <i class="fa-solid fa-chevron-down text-triumph-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-sm text-triumph-textMuted leading-relaxed border-t border-triumph-accent/40 pt-4">
+                        <p class="mb-2"><strong>有配備充電！</strong>凱旋貼心地在儀表前段側面，精美隱藏了一個 <strong>USB-C 充電孔</strong>。如果您加裝手機架導航，可以直接走短線充電，不破壞全車英倫外觀。</p>
+                        <p><strong>關於印度組裝：</strong>發表會實車檢視，凱旋已經針對過去大眾詬病的焊點進行改善。焊接不漂亮的地方在設計上直接隱藏到座位下方或隱密處，加上高層次全機一體烤漆彩貼工藝，手摸沒有一般廉價車的貼紙瑕疵感。整車金屬質感遠超 20 幾萬新台幣的同級水準。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI 凱旋專屬車況諮詢對話視窗 -->
+    <section id="ai-assistant" class="py-20 bg-gradient-to-t from-triumph-dark to-triumph-accent border-t border-triumph-accent px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="px-3 py-1 bg-triumph-gold/10 text-triumph-gold border border-triumph-gold/20 rounded text-xs font-bold uppercase tracking-wider">Triumph AI Support</span>
+                <h2 class="text-3xl font-black text-white mt-3">AI 凱旋 400 專屬車況專家</h2>
+                <p class="text-triumph-textMuted mt-2">基於 2026 最新台灣新車發表規格，即時解答您的任何疑問（包含售價、騎乘數據、馬力優勢、流用配件與焊點細節）</p>
+            </div>
+
+            <!-- 聊天主機外殼 -->
+            <div class="bg-triumph-card border border-triumph-accent rounded-2xl shadow-2xl overflow-hidden flex flex-col h-[550px]">
+                
+                <!-- 聊天頭部 -->
+                <div class="bg-triumph-accent p-4 border-b border-triumph-accent/80 flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-triumph-gold/15 flex items-center justify-center text-triumph-gold text-xl">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-white">凱旋 400 諮詢官</h4>
+                            <span class="text-[11px] text-green-400 flex items-center gap-1"><span class="w-1.5 h-1.5 bg-green-500 rounded-full inline-block animate-pulse"></span> Gemini 2.5 專家在線</span>
+                        </div>
+                    </div>
+                    <div class="text-xs text-triumph-textMuted">
+                        Thruxton & Tracker 400 台灣特設
+                    </div>
+                </div>
+
+                <!-- 訊息展示區 -->
+                <div id="chat-messages" class="flex-1 p-6 overflow-y-auto space-y-4 text-sm">
+                    <!-- 機器人歡迎訊息 -->
+                    <div class="flex items-start space-x-3">
+                        <div class="w-8 h-8 rounded-full bg-triumph-gold/10 flex items-center justify-center text-triumph-gold text-xs flex-shrink-0">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <div class="bg-triumph-accent text-gray-100 p-4 rounded-r-xl rounded-bl-xl max-w-[85%] leading-relaxed">
+                            哈囉！我是凱旋 400 車系台灣發表情報特使。今天 Thruxton 400 (NT$ 21.98萬) 與 Tracker 400 (NT$ 20.98萬) 的規格、高轉 42 匹馬力大升級、甚至是分離把/寬手把的幾何細節我都暸若指掌！
+                            <br><br>
+                            有什麼新車配備或改裝流用的點子想問問我嗎？
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 快捷輸入標籤 -->
+                <div class="p-3 bg-triumph-accent/40 border-t border-triumph-accent/30 flex gap-2 overflow-x-auto text-xs whitespace-nowrap scrollbar-none">
+                    <button onclick="quickAsk('兩台新車的價格與顏色有哪些？')" class="bg-triumph-card hover:bg-triumph-accent text-triumph-gold border border-triumph-accent px-3 py-1.5 rounded-full transition-colors">💰 價格與車色</button>
+                    <button onclick="quickAsk('這次馬力提升到42匹，高轉延遲是真的嗎？')" class="bg-triumph-card hover:bg-triumph-accent text-triumph-gold border border-triumph-accent px-3 py-1.5 rounded-full transition-colors">⚡ 馬力與9000轉優勢</button>
+                    <button onclick="quickAsk('我想知道這兩台車的手把和騎姿差在哪裡？')" class="bg-triumph-card hover:bg-triumph-accent text-triumph-gold border border-triumph-accent px-3 py-1.5 rounded-full transition-colors">🏍️ 戰鬥分離把 vs 滑胎寬把</button>
+                    <button onclick="quickAsk('印度製會不會有焊點不平整的問題？這代怎麼改善？')" class="bg-triumph-card hover:bg-triumph-accent text-triumph-gold border border-triumph-accent px-3 py-1.5 rounded-full transition-colors">🛠️ 焊點細節改善</button>
+                </div>
+
+                <!-- 訊息輸入欄 -->
+                <div class="p-4 bg-triumph-accent border-t border-triumph-accent/80 flex items-center space-x-2">
+                    <input type="text" id="chat-input" onkeydown="handleChatKeyDown(event)" placeholder="輸入您想問的 Triumph 400 疑問..." class="flex-1 bg-triumph-dark border border-triumph-accent rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-triumph-gold text-white transition-all">
+                    <button onclick="sendMessage()" class="bg-triumph-gold hover:bg-triumph-goldHover text-triumph-dark font-bold px-5 py-3 rounded-xl transition-all flex items-center justify-center">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="bg-triumph-dark border-t border-triumph-accent py-12 px-4 mt-auto">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
+            <div class="flex items-center space-x-3">
+                <svg class="w-8 h-8 text-triumph-gold" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L15 8L22 9L17 14L18.5 21L12 17.5L5.5 21L7 14L2 9L9 8L12 2Z"/>
+                </svg>
+                <div>
+                    <span class="font-black text-white tracking-widest block">TRIUMPH TAIWAN</span>
+                    <span class="text-xs text-triumph-textMuted">Triumph Thruxton 400 & Tracker 400 非官方發表展示情報誌</span>
+                </div>
+            </div>
+            <div class="text-triumph-textMuted text-xs text-center md:text-right">
+                <p>&copy; 2026 SuperMot 台灣機車大聯盟 & 凱旋車迷資訊俱樂部。所有規格均來自原廠台灣官方發表會。</p>
+                <p class="mt-1 text-triumph-gold/70">Powered by Gemini 2.5 Flash Tech</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 互動 JavaScript -->
+    <script>
+        // 常數設定
+        const apiKey = ""; // 執行環境會自動代入
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-triumph-app';
+
+        // 系統提詞設定 (嚴格遵循 NotebookLM 知識庫內容)
+        const systemPrompt = `
+You are a professional Triumph 400 Motorcycle Specialist in Taiwan. You are extremely knowledgeable about the newly launched Triumph Thruxton 400 and Tracker 400, based strictly on the provided launch video transcript.
+Always reply in Traditional Chinese (繁體中文) with a friendly, passionate, and slightly cool motorcycle rider tone (車友口氣).
+
+Here is your exact knowledge base from the Taiwan launch transcript:
+- Speed 400 and Scrambler 400x (referred to as "simbat" or "Ssim" in transcripts) now have two new siblings.
+- Thruxton 400 (Cafe Racer Style):
+  * Price: NT$ 21.98萬.
+  * Colors: 4 options.
+  * Key design: Front fairing (龐 / 子彈罩), waterdrop fuel tank (水滴油箱, slim at the back, very easy to grip), clip-on handlebar (分離把, lowered by 24.6 cm, narrowed by 4 cm), bar-end mirrors (牛角鏡), rear footpegs (腳踏後移 8.6 cm), seat height 795mm. Included free standard single-seat cowl (單座蓋) that can be removed with 2 screws.
+  * Riding feel: Moderate sport posture, similar to R3 or Ninja 400 (冷4 / 小忍400). Cool and classy, perfect for suit-riding.
+- Tracker 400 (Dirt/Street Tracker Style):
+  * Price: NT$ 20.98萬.
+  * Colors: 3 options.
+  * Key design: Square headlight guard (方形大燈護罩), side/front number plate design (號碼台), modified/carved fuel tank (油箱消出一個邊 - hard lines, might slightly touch rider's inner thigh when gripping, recommend retro tank pads), dual-exhaust pipe (same type as Scrambler 400), seat height 805mm, wide standard handlebar (lowered by 13.4 cm, widened by 2.3 cm / 23mm), rear footpegs (後移 8.6 cm). Included free standard single-seat cowl (單座蓋).
+  * Riding feel: Active dirt tracker feel, high-control freedom like KTM Duke.
+- Engine & Power Upgrade:
+  * Same 398cc single-cylinder platform, but power upgraded from 40 HP to 42 HP.
+  * Max power rpm shifted from 8,000 rpm to 9,000 rpm. This 1000rpm increase extends the rev range, making the single-cylinder smooth and durable.
+  * Speedometer goes to 180 km/h. Overseas top speed recorded at 140+ km/h, estimated potential top speed in Taiwan is 150 km/h.
+- Quality & Details:
+  * Weld improvements: Weld spots (魚鱗焊) criticized in India-made previous batches are now strategically hidden under the seat or clean chassis spaces.
+  * Paint/Decals: High-end "baked-in paint" decals (烤漆內層彩貼). Smooth touch with zero decals border lines.
+  * Technology: Ride-by-wire (線傳油門), TCS (Traction Control), dual-channel ABS, analogue + digital screen, and a very handy USB-C charging port hidden on the front dashboard area.
+  * Original Accessories: LED round-styled indicators, metal engine guard (下護板). Highly recommended for custom mix-and-matching.
+
+If users ask questions outside of this context, gently guide them back to Triumph 400 series. Keep responses structured, readable, and highly informative!
+`;
+
+        // 1. 行動版選單開關
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if(mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // 2. 規格深度對抗快速高亮
+        function selectModel(model) {
+            // 這個函數可擴充未來在車型對比區塊的動態對比高亮
+            const compareSection = document.getElementById('compare');
+            if (compareSection) {
+                compareSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // 3. 常見問答動態開關 (FAQ Accordion)
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            // 關閉所有其他的 FAQ 項目
+            document.querySelectorAll('.faq-content').forEach(item => {
+                if (item !== content) {
+                    item.classList.add('hidden');
+                    item.previousElementSibling.querySelector('i').classList.remove('rotate-180');
+                }
+            });
+
+            // 切換目前的 FAQ 項目
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // 4. 配件/資源庫即時搜尋功能
+        function filterResources() {
+            const input = document.getElementById('search-input');
+            const filter = input.value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.resource-card');
+            let hasResults = false;
+
+            cards.forEach(card => {
+                const keywords = card.getAttribute('data-keywords') || "";
+                const title = card.querySelector('h4').textContent.toLowerCase();
+                const text = card.querySelector('p').textContent.toLowerCase();
+                const match = title.includes(filter) || text.includes(filter) || keywords.includes(filter);
+
+                if (match) {
+                    card.style.display = 'flex';
+                    hasResults = true;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            const noResults = document.getElementById('no-results');
+            if (hasResults) {
+                noResults.classList.add('hidden');
+            } else {
+                noResults.classList.remove('hidden');
+            }
+        }
+
+        // 資源庫分類按鈕過濾
+        function filterCategory(category) {
+            // 切換按鈕樣式
+            const buttons = document.querySelectorAll('.category-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-triumph-gold', 'text-triumph-dark');
+                btn.classList.add('bg-triumph-card', 'text-gray-300', 'border', 'border-triumph-accent');
+            });
+
+            // 高亮當前按鈕
+            event.target.classList.remove('bg-triumph-card', 'text-gray-300', 'border', 'border-triumph-accent');
+            event.target.classList.add('bg-triumph-gold', 'text-triumph-dark');
+
+            // 開始過濾卡片
+            const cards = document.querySelectorAll('.resource-card');
+            let hasResults = false;
+
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (category === 'all' || cardCategory === category) {
+                    card.style.display = 'flex';
+                    hasResults = true;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            const noResults = document.getElementById('no-results');
+            if (hasResults) {
+                noResults.classList.add('hidden');
+            } else {
+                noResults.classList.remove('hidden');
+            }
+        }
+
+        // 5. AI 對話對接 Gemini 2.5 API (指數退避 retry, 體驗優先)
+        async function callGemini(userQuery, systemInstruction) {
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                systemInstruction: { parts: [{ text: systemInstruction }] }
+            };
+
+            // 實作 5 次指數退避 retry 機制
+            let delay = 1000;
+            for (let i = 0; i < 5; i++) {
+                try {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    if (response.ok) {
+                        const result = await response.json();
+                        return result.candidates?.[0]?.content?.parts?.[0]?.text || "抱歉，我暫時無法解讀您的提問。";
+                    }
+                } catch (error) {
+                    // 失敗時進行指數等待，不列印 log 保持整潔
+                }
+                await new Promise(res => setTimeout(res, delay));
+                delay *= 2;
+            }
+            throw new Error("API 請求連線失敗，請檢查網路連線或稍後再試。");
+        }
+
+        // 送出訊息
+        async function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const messageText = input.value.trim();
+            if (!messageText) return;
+
+            // 清空輸入框
+            input.value = "";
+
+            // 渲染使用者訊息
+            appendMessage('user', messageText);
+
+            // 渲染載入中 UI
+            const loadingId = appendLoadingIndicator();
+
+            try {
+                const aiReply = await callGemini(messageText, systemPrompt);
+                removeLoadingIndicator(loadingId);
+                appendMessage('ai', aiReply);
+            } catch (err) {
+                removeLoadingIndicator(loadingId);
+                appendMessage('ai', "連線似乎遇到點阻礙，請車友稍後再試一次！(錯誤提示: 連線逾時)");
+            }
+        }
+
+        // 快速詢問標籤
+        function quickAsk(text) {
+            document.getElementById('chat-input').value = text;
+            sendMessage();
+        }
+
+        // 處理鍵盤 Enter 送出
+        function handleChatKeyDown(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        // 新增對話泡泡
+        function appendMessage(sender, text) {
+            const chatMessages = document.getElementById('chat-messages');
+            const msgDiv = document.createElement('div');
+            msgDiv.className = "flex items-start space-x-3 " + (sender === 'user' ? 'justify-end' : '');
+
+            // 頭像
+            let avatarHtml = "";
+            if (sender === 'user') {
+                avatarHtml = `
+                    <div class="bg-triumph-accent text-gray-100 p-4 rounded-l-xl rounded-br-xl max-w-[85%] leading-relaxed border border-triumph-accent/80">
+                        ${text.replace(/\n/g, '<br>')}
+                    </div>
+                    <div class="w-8 h-8 rounded-full bg-triumph-accent flex items-center justify-center text-triumph-gold text-xs flex-shrink-0">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                `;
+            } else {
+                avatarHtml = `
+                    <div class="w-8 h-8 rounded-full bg-triumph-gold/10 flex items-center justify-center text-triumph-gold text-xs flex-shrink-0">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="bg-triumph-accent text-gray-100 p-4 rounded-r-xl rounded-bl-xl max-w-[85%] leading-relaxed">
+                        ${text.replace(/\n/g, '<br>')}
+                    </div>
+                `;
+            }
+
+            msgDiv.innerHTML = avatarHtml;
+            chatMessages.appendChild(msgDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // 載入指示器
+        function appendLoadingIndicator() {
+            const chatMessages = document.getElementById('chat-messages');
+            const id = "loading-" + Date.now();
+            const msgDiv = document.createElement('div');
+            msgDiv.id = id;
+            msgDiv.className = "flex items-start space-x-3";
+            msgDiv.innerHTML = `
+                <div class="w-8 h-8 rounded-full bg-triumph-gold/10 flex items-center justify-center text-triumph-gold text-xs flex-shrink-0">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div class="bg-triumph-accent text-gray-400 p-4 rounded-r-xl rounded-bl-xl max-w-[85%] flex items-center space-x-2">
+                    <span class="text-xs">專用 AI 正在全速解密檔案中</span>
+                    <span class="flex space-x-1">
+                        <span class="w-1.5 h-1.5 bg-triumph-gold rounded-full animate-bounce" style="animation-delay:0.1s"></span>
+                        <span class="w-1.5 h-1.5 bg-triumph-gold rounded-full animate-bounce" style="animation-delay:0.2s"></span>
+                        <span class="w-1.5 h-1.5 bg-triumph-gold rounded-full animate-bounce" style="animation-delay:0.3s"></span>
+                    </span>
+                </div>
+            `;
+            chatMessages.appendChild(msgDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return id;
+        }
+
+        function removeLoadingIndicator(id) {
+            const el = document.getElementById(id);
+            if (el) el.remove();
+        }
+    </script>
+</body>
+</html>
